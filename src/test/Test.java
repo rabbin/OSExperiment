@@ -13,8 +13,8 @@ public class Test {
         list.addFirst(0);
         list.addFirst(9);
         list.addFirst(10);
-        list.removeLast();
-        list.removeLast();
+        Integer res =list.get(new Integer(0));
+        System.out.println(list.get(new Integer(0)));
 
     }
 }
