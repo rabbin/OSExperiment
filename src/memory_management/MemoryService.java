@@ -17,12 +17,21 @@ public class MemoryService {
 
     void start(){
         for(int i = 0; i<sequenceLength;i++){
+
             Integer res = pageTable.lookup(pageSequence.get(i));
+            System.out.printf("访问页面：%d ",pageSequence.get(i));
+            if (res ==null){
+                System.out.printf("命中\n");
+            }else {
+                System.out.printf("未命中\n");
+            }
             eliminatedPage.add(res);
+
+            System.out.print("\033[1;32m");
             for(Integer item: pageTable.pageTable){
                 System.out.print(item+"\t");
             }
-            System.out.println();
+            System.out.println("\033[0m");
         }
     }
 

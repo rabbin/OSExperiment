@@ -4,25 +4,30 @@ import memory_management.PageTableImp.FifoPageTable;
 import memory_management.PageTableImp.LruPageTable;
 
 import java.util.LinkedList;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] args){
 
+        final int len = 6;
+        final int size = 3;
+
+        Random rd = new Random(System.currentTimeMillis());
         LinkedList<Integer> pageSequence = new LinkedList<>();
-        pageSequence.addFirst(7);
-        pageSequence.addFirst(7);
-        pageSequence.addFirst(6);
-        pageSequence.addFirst(5);
-        pageSequence.addFirst(4);
-        pageSequence.addFirst(1);
-        pageSequence.addFirst(3);
-        pageSequence.addFirst(2);
-        pageSequence.addFirst(1);
-        pageSequence.addFirst(1);
+        for(int i =0; i<len;i++){
+            pageSequence.add(rd.nextInt(200));
+        }
 
+        System.out.println("LRU:");
+        MemoryService lru=  new MemoryService(new LruPageTable(size), pageSequence);
+        lru.start();
+        lru.printInfo();
 
-        MemoryService memoryService=  new MemoryService(new LruPageTable(3), pageSequence);
-        memoryService.start();
-        memoryService.printInfo();
+        System.out.println("-------------------------------");
+        System.out.println("FIFO:");
+        MemoryService fifo=  new MemoryService(new FifoPageTable(size), pageSequence);
+        fifo.start();
+        fifo.printInfo();
+
     }
 }

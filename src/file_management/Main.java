@@ -5,15 +5,22 @@ public class Main {
 
         FileSystem fileSystem = new FileSystem();
 
+
+        System.out.println("创建50个文件：");
         for(int i = 0 ;i< 50 ;i++){
             int size = (int)(Math.random()*8)+2;
             fileSystem.saveFile(new File(String.valueOf(i)+".txt", size));
         }
+        fileSystem.printBitMapInfo();
 
+        System.out.println("删除奇数文件：");
         for(int i =1 ;i < 50; i+=2){
             fileSystem.deleteFile(String.valueOf(i)+".txt");
         }
+        fileSystem.printBitMapInfo();
 
+
+        System.out.println("创建ABCDE文件：");
         fileSystem.saveFile(new File("A.txt",7));
         fileSystem.saveFile(new File("B.txt",5));
         fileSystem.saveFile(new File("C.txt",2));

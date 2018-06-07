@@ -52,9 +52,34 @@ public class FileSystem {
     }
 
     void printBitMapInfo() {
+
+        int bitMapCopy[][] = new int[raw][col];
         for (int i = 0; i < raw; i++){
             for (int j = 0; j< col ;j++){
-                System.out.print(bitMap[i][j]+"\t");
+                bitMapCopy[i][j] = 0;
+            }
+        }
+
+        int size = fileList.size();
+
+        for (int m = 0, flag = 0;m<size;m++){
+            File file = fileList.get(m);
+            for(Integer integer:file.blockList){
+                int i = integer/col;
+                int j = integer%col;
+                bitMapCopy[i][j] = flag;
+            }
+            flag= (flag+1)%2;
+        }
+
+
+        for (int i = 0; i < raw; i++){
+            for (int j = 0; j< col ;j++){
+                if(bitMap[i][j]==0){
+                    System.out.printf("\033[1;32m%d\033[0m\t",0);
+                }else{
+                    System.out.printf("\033[1;%dm1\033[0m\t",35+bitMapCopy[i][j]);
+                }
             }
             System.out.println();
         }

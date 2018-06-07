@@ -35,6 +35,12 @@ public class SjfSchedulingQueue extends SchedulingQueue {
 
         Process process = schedulingQueue.getFirst();
 
+        for(Process pro:schedulingQueue){
+            System.out.printf("\033[1;32mprocess %s : %d\033[0m | ", pro.processName,pro.serviceTime);
+        }
+        System.out.println();
+        System.out.println(totalTime+": process "+process.processName);
+
         int size = schedulingQueue.size();
         for (int i = 1; i<size; i++){
             schedulingQueue.get(i).waitTime++;
@@ -45,7 +51,6 @@ public class SjfSchedulingQueue extends SchedulingQueue {
             process.finishTime = totalTime;
             process.turnAroundTime = process.finishTime - process.arriveTime + 1;
             process.weightedTurnAroundTime = (double)(process.turnAroundTime)/process.serviceTime;
-            System.out.println(process);
             removeProcess(process);
         }
     }

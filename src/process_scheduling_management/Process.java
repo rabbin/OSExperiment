@@ -16,16 +16,18 @@ public class Process {
         this.serviceTime = serviceTime;
         this.leftServiceTime = serviceTime;
     }
+    public Process(Process process){
+        this.processName = process.processName;
+        this.arriveTime = process.arriveTime;
+        this.serviceTime = process.serviceTime;
+        this.leftServiceTime = process.leftServiceTime;
+    }
 
     @Override
     public String toString() {
-        return "process name: "+ processName+
-                ", arrive time: "+ arriveTime+
-                ", service time: "+ serviceTime+
-                ", wait time: "+ waitTime+
-                ", finish time: "+ finishTime+
-                ", turn arround time: "+ turnAroundTime+
-                ", weighted turn arround time:"+ String.format("%.2f", weightedTurnAroundTime);
+        return ""+
+                String.format("%-15s%-15d%-15d%-15d%-15d%-15d%-15.2f",
+                        processName,arriveTime, serviceTime,waitTime, finishTime,turnAroundTime, weightedTurnAroundTime);
     }
 
 }
