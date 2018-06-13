@@ -26,7 +26,7 @@ public class Main {
         LinkedList<Process> processes = new LinkedList<>();
 
         for(int i =0 ;i< num;i++){
-            processes.add(new Process(String.valueOf(i), rd.nextInt(10), rd.nextInt(10)+1));
+            processes.add(new Process(String.valueOf(i), rd.nextInt(5), rd.nextInt(10)+1));
         }
 
         ProcessPool fcfs = new ProcessPool(new FcfsSchedulingQueue());

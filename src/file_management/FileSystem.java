@@ -108,7 +108,7 @@ public class FileSystem {
     void  saveFile(File file){
         fileList.add(file);
 
-        int len = (int)((file.size+0.5)/blockSize);
+        int len = (int)((file.size+0.5)/blockSize+1);
         for (int i = 0; i < row && len>0; i++){
             for (int j = 0; j< col && len >0 ;j++){
                 if(bitMap[i][j] == 0){

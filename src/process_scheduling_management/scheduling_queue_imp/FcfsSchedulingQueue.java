@@ -22,7 +22,7 @@ public class FcfsSchedulingQueue extends SchedulingQueue {
     @Override
     protected void run(int totalTime) {
 
-        Process process = schedulingQueue.getLast();
+        Process process = schedulingQueue.getLast();//调度队尾的进程
 
         for(Process pro:schedulingQueue){
             System.out.printf("\033[1;32mprocess %s : %d\033[0m | ", pro.processName,pro.arriveTime);
