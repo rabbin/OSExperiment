@@ -7,7 +7,7 @@ import process_scheduling_management.SchedulingQueue;
 
 public class RrSchedulingQueue extends SchedulingQueue {
 
-    int flag = -1;
+    private int flag = -1;
     @Override
     protected void addProcess(Process process){
         schedulingQueue.add(process);

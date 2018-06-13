@@ -1,8 +1,10 @@
 package process_scheduling_management;
 
+import process_scheduling_management.scheduling_queue_imp.SjfSchedulingQueue;
+
 import java.util.LinkedList;
 
-public class ProcessPool {
+public class ProcessPool{
     private SchedulingQueue schedulingQueue;
     private LinkedList<Process> jobList = new LinkedList<>();
     private int totalTime = -1;
@@ -17,14 +19,14 @@ public class ProcessPool {
 
     }
 
-    void addProcesses(LinkedList<Process> processes){
+    public void addProcesses(LinkedList<Process> processes){
 
         for(Process process: processes){
             jobList.add(new Process(process));
         }
     }
 
-    void start(){
+    public void start(){
 
         int jobCount = jobList.size();
         while(true){
@@ -54,7 +56,7 @@ public class ProcessPool {
 
     }
 
-    void printInfo(){
+    public void printInfo(){
         System.out.println(String.format("%-15s%-15s%-15s%-15s%-15s%-15s%-15s","processName","arriveTime","serviceTime","waitTime","finishTime","turnAroundTime","weightedTurnAroundTime"));
         for(Process process: jobList){
             System.out.println(process);

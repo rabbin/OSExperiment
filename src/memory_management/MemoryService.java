@@ -1,7 +1,9 @@
 package memory_management;
+import memory_management.PageTableImp.FifoPageTable;
+
 import java.util.LinkedList;
 
-public class MemoryService {
+public class MemoryService{
     LinkedList<Integer> pageSequence ;
     PageTable pageTable;
     LinkedList<Integer> eliminatedPage = new LinkedList<>();

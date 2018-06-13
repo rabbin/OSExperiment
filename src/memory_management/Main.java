@@ -9,13 +9,13 @@ import java.util.Random;
 public class Main {
     public static void main(String[] args){
 
-        final int len = 6;
+        final int len = 20;
         final int size = 3;
 
         Random rd = new Random(System.currentTimeMillis());
         LinkedList<Integer> pageSequence = new LinkedList<>();
         for(int i =0; i<len;i++){
-            pageSequence.add(rd.nextInt(200));
+            pageSequence.add(rd.nextInt(15));
         }
 
         System.out.println("LRU:");

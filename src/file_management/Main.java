@@ -34,5 +34,7 @@ public class Main {
         fileSystem.getFileInfo("E.txt");
 
         fileSystem.printBitMapInfo();
+
+        fileSystem.listFiles();
     }
 }

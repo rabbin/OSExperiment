@@ -35,26 +35,31 @@ public class Main {
         ProcessPool sjf = new ProcessPool(new SjfSchedulingQueue());
 
 
-
-        System.out.println("--hrn------");
-        hrn.addProcesses(processes);
-        hrn.start();
-        hrn.printInfo();
-
         System.out.println("--fcfs------");
         fcfs.addProcesses(processes);
         fcfs.start();
         fcfs.printInfo();
+
+        System.out.println("--sjf------");
+        sjf.addProcesses(processes);
+        sjf.start();
+        sjf.printInfo();
 
         System.out.println("--rr------");
         rr.addProcesses(processes);
         rr.start();
         rr.printInfo();
 
-        System.out.println("--sjf------");
-        sjf.addProcesses(processes);
-        sjf.start();
-        sjf.printInfo();
+        System.out.println("--hrn------");
+        hrn.addProcesses(processes);
+        hrn.start();
+        hrn.printInfo();
+
+
+
+
+
+
 
     }
 }

@@ -10,7 +10,7 @@ public class Process {
     public int turnAroundTime;
     public double weightedTurnAroundTime;
 
-    Process(String processName,int arriveTime,int serviceTime){
+    public Process(String processName,int arriveTime,int serviceTime){
         this.processName = processName;
         this.arriveTime = arriveTime;
         this.serviceTime = serviceTime;
