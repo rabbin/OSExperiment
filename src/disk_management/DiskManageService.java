@@ -1,4 +1,4 @@
-package disk_managemnet;
+package disk_management;
 
 import java.util.Collections;
 import java.util.LinkedList;

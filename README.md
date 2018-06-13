@@ -5,7 +5,7 @@
 
 ## [磁盘移臂调度](./src/disk_management)  
 
-## [页表置换](./src/memory_managemnet)  
+## [页表置换](./src/memory_management)  
 
 ## [文件管理](./src/file_management)  
 

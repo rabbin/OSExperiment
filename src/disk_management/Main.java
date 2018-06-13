@@ -1,4 +1,4 @@
-package disk_managemnet;
+package disk_management;
 
 import javax.swing.*;
 import java.awt.*;
